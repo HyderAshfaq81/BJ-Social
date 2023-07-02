@@ -5,7 +5,7 @@ const LoginForm = () => {
   return(
     <div className="min-h-screen grid grid-cols-12">
       <div className="col-span-4">
-        <img src={signinImage} alt="signinImage" className="h-full" />
+        <img src={signinImage} alt="signinImage" className="h-full object-cover" />
       </div>
       <div className="col-span-6 h-full w-full">
         <a href="/" className="mt-[20%] ml-[35%] flex relative">
