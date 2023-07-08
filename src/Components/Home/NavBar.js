@@ -1,9 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import coverImage from '../../assets/cover.jpeg';
 import './home.css';
+import { toast } from "react-toastify";
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <div className="bg-image w-full h-screen px-10 pt-5 relative">
       <div className="flex justify-between">
@@ -35,7 +37,12 @@ const Home = () => {
             </li>
           </ul>
         </nav>
-        <div className="text-2xl mr-10 font-bold hover:underline cursor-pointer hover:text-[#FF7294] text-white">
+        <div className="text-2xl mr-10 font-bold hover:underline cursor-pointer hover:text-[#FF7294] text-white"
+          onClick={() => {
+            toast.success('Logged out successfully');
+            navigate('/login')
+          }}
+        >
           Logout
         </div>
       </div>

@@ -1,7 +1,60 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import signupImg from "../../assets/signupImg.jpeg";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
+  const [first_name, setFname] = useState("")
+  const [last_name, setLname] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [address, setAddress] = useState("")
+
+  const navigate = useNavigate();
+  const formRef = useRef();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImE1MWJiNGJkMWQwYzYxNDc2ZWIxYjcwYzNhNDdjMzE2ZDVmODkzMmIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vY2x0LTM2MDMxNCIsImF1ZCI6ImNsdC0zNjAzMTQiLCJhdXRoX3RpbWUiOjE2ODc5NjMwMzYsInVzZXJfaWQiOiJsRjZYd2RRQlNOUEJnNVBqdjZFOXE1YThrT1EyIiwic3ViIjoibEY2WHdkUUJTTlBCZzVQanY2RTlxNWE4a09RMiIsImlhdCI6MTY4ODQyNjk0NSwiZXhwIjoxNjg4NDMwNTQ1LCJlbWFpbCI6Imhpa2VxeUBzb2NhbS5tZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicGhvbmVfbnVtYmVyIjoiKzQ2NzI2NDEyNTU0IiwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJwaG9uZSI6WyIrNDY3MjY0MTI1NTQiXSwiZW1haWwiOlsiaGlrZXF5QHNvY2FtLm1lIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.SX7denTXQ6VEt4AjcI9kNAeKoKseHijaIQopgeAaZm-FF1H3iZGeVgDvuYV4CoIIAFgM8adC24ZxDwkEEBLl-vCy9mW4GIXeQV89bDSn_FiCfhmKvmgLsOYfv5CXliSjG_s674zae-Hao5gdxNteuKNPKMghkmpu-gtBgTZUIYomi4tZN39XjL990eQkMyKoA0NH9J_ZnD5MGlAjiVz5XBqe1o_Oe6EqY11G7xhgfpzsbcgTnPY6-ZRAujwKCNFYu6dtrqFixqSdgdwnTMlQygmZAhWpZl69pxL-9iWMZfK77pPWn7dD0NfumVWI1pAxKrI0gTMNktN3jJsPaq_W4w");
+    //  var myHeaders = {
+    //     'Content-type': 'application/json',
+    //     'Accept': 'application/json'
+    //   }
+    var formdata = new FormData();
+    formdata.append("user[first_name]", first_name);
+    formdata.append("user[last_name]", last_name);
+    formdata.append("user[address]", address);
+    formdata.append("user[email]", email);
+    formdata.append("user[password]", password);
+    try {
+      var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: formdata,
+        redirect: 'follow'
+      };
+      fetch("https://meet-date-ac403bfa9c3a.herokuapp.com/signup", requestOptions)
+      .then(response =>  response.json())
+      .then(result => {
+        console.log(result)
+        if(result.status.code >= 200 && result.status.code < 400) {
+          toast.success(result.status?.message);
+          formRef.current.reset();
+          navigate('/login')
+        } else {
+          toast.error(result.status?.message)
+          formRef.current.reset();
+        }
+      })
+      .catch(error => {
+        toast.error("Error While Creating account");
+        formRef.current.reset();
+    });
+    }
+    catch(error) {
+      toast.error("Error While Creating account")
+    }
+  }
   return (
     <div className="mt-10 w-full min-h-screen">
       <div className="flex justify-center my-4">
@@ -10,6 +63,7 @@ const Signup = () => {
             <img
               src="https://logowik.com/content/uploads/images/sexy-woman1909.logowik.com.webp"
               className="w-[100px] h-[80px]"
+              alt="signup iamge"
             />
           </a>
           <div className="font-bold text-2xl flex items-center absolute top-4 -left-7">
@@ -39,7 +93,7 @@ const Signup = () => {
           </div>
           <div className="w-[70%]">
             <div className="text-[28px] font-bold mb-4">Create a new profile</div>
-            <div className="">
+            <form ref={formRef} onSubmit={handleSubmit}>
               <div className="flex w-full">
                 <div className="mb-4 w-1/2">
                   <label className="ml-2 text-base text-black/70">First Name</label>
@@ -49,6 +103,7 @@ const Signup = () => {
                     name="first_name"
                     placeholder="Enter your First Name"
                     required
+                    onChange={(e) => setFname(e.target.value)}
                   />
                 </div>
                 <div className="mb-4 w-1/2">
@@ -59,6 +114,7 @@ const Signup = () => {
                     name="last_name"
                     placeholder="Enter your Last Name"
                     required
+                    onChange={(e) => setLname(e.target.value)}
                   />
                 </div>
               </div>
@@ -67,20 +123,22 @@ const Signup = () => {
                   <label className="ml-2 text-base text-black/70">Email Address</label>
                   <input
                     className="mt-2 tracking-[0.01em] w-[98%] text-black/50 box-border border-2 border-[#93AAC5] rounded-[8px] text-sm md:text-xs2 lg:text-sm py-5 md:py-3 lg:py-4 px-7 bg-white/50"
-                    type="text"
+                    type="email"
                     name="first_name"
                     placeholder="Enter your Email Address"
                     required
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className="mb-4 w-1/2">
                   <label className="ml-2 text-base text-black/70">Password</label>
                   <input
                     className="mt-2 tracking-[0.01em] w-[98%] text-black/50 box-border border-2 border-[#93AAC5] rounded-[8px] text-sm md:text-xs2 lg:text-sm py-5 md:py-3 lg:py-4 px-7 bg-white/50"
-                    type="text"
+                    type="password"
                     name="last_name"
                     placeholder="Enter your Password"
                     required
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
               </div>
@@ -93,13 +151,14 @@ const Signup = () => {
                     name="first_name"
                     placeholder="Enter your Home Address"
                     required
+                    onChange={(e) => setAddress(e.target.value)}
                   />
                 </div>
               </div>
-              <div className="cursor-pointer bg-[#FFC0CA] w-full h-[50px] flex justify-center items-center rounded-[8px] text-white text-[18px] font-bold border-[0.2px] border-black/50 mt-4">
+              <button className="cursor-pointer bg-[#FFC0CA] w-full h-[50px] flex justify-center items-center rounded-[8px] text-white text-[18px] font-bold border-[0.2px] border-black/50 mt-4">
                 SUBMIT
-              </div>
-            </div>
+              </button>
+            </form>
           </div>
         </div>
       </div>
