@@ -1,0 +1,15 @@
+/* Tailwind CSS */
+.pagination {
+  @apply flex justify-center;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.pagination-item {
+  @apply inline-block px-4 py-2 border border-gray-300 rounded-md cursor-pointer transition-colors duration-300;
+}
+
+.pagination-item.active {
+  @apply bg-base text-white;
+}
