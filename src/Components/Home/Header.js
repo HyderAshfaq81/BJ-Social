@@ -64,7 +64,7 @@ const Header = () => {
               className="text-base font-medium text-black transition-all duration-200 hover:text-base focus:text-base"
             >
               {" "}
-              home{" "}
+              Home{" "}
             </a>
 
             <a
@@ -98,7 +98,15 @@ const Header = () => {
               className="text-base font-medium text-black transition-all duration-200 hover:text-base focus:text-base"
             >
               {" "}
-              profile{" "}
+              Profile{" "}
+            </a>
+            <a
+              href="/pricing"
+              title=""
+              className="text-base font-medium text-black transition-all duration-200 hover:text-base focus:text-base"
+            >
+              {" "}
+              Pricing{" "}
             </a>
           </div>
 

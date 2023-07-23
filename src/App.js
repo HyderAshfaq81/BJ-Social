@@ -25,7 +25,7 @@ function App() {
         <Route path="/profile" element={<Profile/>} />
         <Route path="/find_matches" element={<FindMatches />} />
         <Route path="/testimonail" element={<Testimonail />} />
-        <Route path="/payment" element={<Payment />} />
+        <Route path="/pricing" element={<Payment />} />
       </Routes>
     </div>
   );

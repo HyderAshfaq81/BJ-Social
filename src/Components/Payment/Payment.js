@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "../Home/Header";
 
 const Payment  = () => {
   const suggestions = [
@@ -21,20 +22,7 @@ const Payment  = () => {
   return (
     <>
       <div className="mt-10 w-full min-h-screen">
-        <div className="flex justify-center my-4">
-          <a href="/" className="flex relative">
-            <a href="/">
-              <img
-                src="https://logowik.com/content/uploads/images/sexy-woman1909.logowik.com.webp"
-                className="w-[100px] h-[80px]"
-              />
-            </a>
-            <div className="font-bold text-2xl flex items-center absolute top-4 -left-7">
-              <div className="mr-7">MEET</div>
-              <div>DATE</div>
-            </div>
-          </a>
-        </div>
+        <Header />
         <div className="bg-grey2 w-full min-h-screen pt-10">
           <div className="lg:w-[1280px] m-auto p-10 flex border-[0.1px] border-grey1/30 rounded-[8px]">
             <div className="w-full flex flex-col justify-center items-center">
