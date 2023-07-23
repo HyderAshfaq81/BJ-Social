@@ -1,0 +1,21 @@
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0) scale(1.2);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Add the animation property for bounceIn */
+.bounceIn {
+  animation: bounceIn 1s ease-in-out;
+}

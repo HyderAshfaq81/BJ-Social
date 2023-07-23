@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 import signupImg from "../../assets/signupImg.jpeg";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { userSignup } from "../../redux/actions/Authentication";
 
 const Signup = () => {
   const [first_name, setFname] = useState("")
@@ -9,51 +11,56 @@ const Signup = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [address, setAddress] = useState("")
+  const dispatch = useDispatch();
 
   const navigate = useNavigate();
   const formRef = useRef();
   const handleSubmit = async (e) => {
     e.preventDefault();
     var myHeaders = new Headers();
-    myHeaders.append("Authorization", "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImE1MWJiNGJkMWQwYzYxNDc2ZWIxYjcwYzNhNDdjMzE2ZDVmODkzMmIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vY2x0LTM2MDMxNCIsImF1ZCI6ImNsdC0zNjAzMTQiLCJhdXRoX3RpbWUiOjE2ODc5NjMwMzYsInVzZXJfaWQiOiJsRjZYd2RRQlNOUEJnNVBqdjZFOXE1YThrT1EyIiwic3ViIjoibEY2WHdkUUJTTlBCZzVQanY2RTlxNWE4a09RMiIsImlhdCI6MTY4ODQyNjk0NSwiZXhwIjoxNjg4NDMwNTQ1LCJlbWFpbCI6Imhpa2VxeUBzb2NhbS5tZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicGhvbmVfbnVtYmVyIjoiKzQ2NzI2NDEyNTU0IiwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJwaG9uZSI6WyIrNDY3MjY0MTI1NTQiXSwiZW1haWwiOlsiaGlrZXF5QHNvY2FtLm1lIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.SX7denTXQ6VEt4AjcI9kNAeKoKseHijaIQopgeAaZm-FF1H3iZGeVgDvuYV4CoIIAFgM8adC24ZxDwkEEBLl-vCy9mW4GIXeQV89bDSn_FiCfhmKvmgLsOYfv5CXliSjG_s674zae-Hao5gdxNteuKNPKMghkmpu-gtBgTZUIYomi4tZN39XjL990eQkMyKoA0NH9J_ZnD5MGlAjiVz5XBqe1o_Oe6EqY11G7xhgfpzsbcgTnPY6-ZRAujwKCNFYu6dtrqFixqSdgdwnTMlQygmZAhWpZl69pxL-9iWMZfK77pPWn7dD0NfumVWI1pAxKrI0gTMNktN3jJsPaq_W4w");
-    //  var myHeaders = {
-    //     'Content-type': 'application/json',
-    //     'Accept': 'application/json'
-    //   }
     var formdata = new FormData();
     formdata.append("user[first_name]", first_name);
     formdata.append("user[last_name]", last_name);
     formdata.append("user[address]", address);
     formdata.append("user[email]", email);
     formdata.append("user[password]", password);
-    try {
-      var requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: formdata,
-        redirect: 'follow'
-      };
-      fetch("https://meet-date-ac403bfa9c3a.herokuapp.com/signup", requestOptions)
-      .then(response =>  response.json())
-      .then(result => {
-        console.log(result)
-        if(result.status.code >= 200 && result.status.code < 400) {
-          toast.success(result.status?.message);
-          formRef.current.reset();
-          navigate('/login')
-        } else {
-          toast.error(result.status?.message)
-          formRef.current.reset();
-        }
-      })
-      .catch(error => {
-        toast.error("Error While Creating account");
-        formRef.current.reset();
-    });
+
+    const response = dispatch(userSignup(formdata));
+    if (response.error) {
+      formRef.current.reset();
+    } else {
+      formRef.current.reset();
+      navigate('/home')
     }
-    catch(error) {
-      toast.error("Error While Creating account")
-    }
+
+    // try {
+    //   var requestOptions = {
+    //     method: 'POST',
+    //     headers: myHeaders,
+    //     body: formdata,
+    //     redirect: 'follow'
+    //   };
+    //   fetch(`http://127.0.0.1:3000/signup`, requestOptions)
+    //   .then(response => response.json())
+    //   .then(result => {
+    //     console.log(result)
+    //     if(result.status.code >= 200 && result.status.code < 400) {
+    //       toast.success(result.status?.message);
+    //       formRef.current.reset();
+    //       navigate('/login')
+    //     } else {
+    //       toast.error(result.status?.message)
+    //       formRef.current.reset();
+    //     }
+    //   })
+    //   .catch(error => {
+    //     toast.error("Error While Creating account");
+    //     formRef.current.reset();
+    // });
+    // }
+    // catch(error) {
+    //   toast.error("Error While Creating account")
+    // }
   }
   return (
     <div className="mt-10 w-full min-h-screen">

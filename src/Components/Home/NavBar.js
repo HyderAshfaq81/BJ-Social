@@ -5,6 +5,7 @@ import './home.css';
 import { toast } from "react-toastify";
 
 const Home = () => {
+  const token = localStorage.getItem('authToken')
   const navigate = useNavigate();
   return (
     <div className="bg-image w-full h-screen px-10 pt-5 relative">
@@ -24,27 +25,38 @@ const Home = () => {
               <Link to="/home" className="text-2xl mr-10 font-bold hover:underline hover:text-[#FF7294] text-white">Home</Link>
             </li>
             <li>
-              <Link to="/home" className="text-2xl mr-10 font-bold hover:underline hover:text-[#FF7294] text-white">Match</Link>
+              <Link to="/find_matches" className="text-2xl mr-10 font-bold hover:underline hover:text-[#FF7294] text-white">Find Match</Link>
             </li>
             <li>
               <Link to="/home" className="text-2xl mr-10 font-bold hover:underline hover:text-[#FF7294] text-white">About</Link>
             </li>
             <li>
-              <Link to="/home" className="text-2xl mr-10 font-bold hover:underline hover:text-[#FF7294] text-white">Testomoriam</Link>
+              <Link to="/testimonail" className="text-2xl mr-10 font-bold hover:underline hover:text-[#FF7294] text-white">Testomonial</Link>
             </li>
             <li>
-              <Link to="/home" className="text-2xl mr-10 font-bold hover:underline hover:text-[#FF7294] text-white">Contact Us</Link>
+              <Link to="/profile" className="text-2xl mr-10 font-bold hover:underline hover:text-[#FF7294] text-white">Profile</Link>
             </li>
           </ul>
         </nav>
+        {token ?
         <div className="text-2xl mr-10 font-bold hover:underline cursor-pointer hover:text-[#FF7294] text-white"
           onClick={() => {
+            localStorage.removeItem('authToken')
             toast.success('Logged out successfully');
             navigate('/login')
           }}
         >
           Logout
         </div>
+        :
+        <div className="text-2xl mr-10 font-bold hover:underline cursor-pointer hover:text-[#FF7294] text-white"
+          onClick={() => {
+            navigate('/login')
+          }}
+        >
+          Login
+        </div>
+        }
       </div>
       <div className="flex flex-col justify-center items-center w-[60%] m-auto h-full text-white">
         <div className="text-4xl font-bold leading-7 mb-4">Find Your Partner With Ease</div>

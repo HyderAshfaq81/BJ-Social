@@ -28,10 +28,11 @@ const LoginForm = () => {
       body: formdata,
       redirect: "follow",
     };
-    fetch("https://meet-date-ac403bfa9c3a.herokuapp.com/login", requestOptions)
+    fetch(`http://127.0.0.1:3000/login`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         if (result.status.code >= 200 && result.status.code < 400) {
+          // localStorage.setItem('token', 'eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJkN2M0YzU0My1iNGUzLTRlZjctYjQ3MC00MDY1ZTUxNDdkMjQiLCJzdWIiOiI1Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjkwMDcwMzg0LCJleHAiOjE2OTAwNzIxODR9.uKgK4rkQlSFNGEpMTUOIOOIrDbo7Tp53l0Xl-aXB2wU')
           toast.success(result.status.message)
           navigate('/home')
         } else {

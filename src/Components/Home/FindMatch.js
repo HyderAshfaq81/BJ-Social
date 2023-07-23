@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import client from "../../assets/client.png"
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import ProfileCard from "./ProfileCard";
+import { toast } from "react-toastify";
 
 const FindMatch = () => {
+  const allProfiles = useSelector(state => state.allProfiles.profiles)
+  console.log('allProfiles', allProfiles)
+  useEffect(() => {
+    const token = localStorage.getItem('authToken')
+    if (!token) {
+      toast.error('you need to signup of login to continue')
+    }
+  },[])
   return (
     <div className="bg-grey2">
       <div className="flex justify-center bg-grey2 pt-40">
@@ -16,50 +27,17 @@ const FindMatch = () => {
           </div>
         </div>
       </div>
-      <div className="w-[80%] flex flex-col justify-center m-auto">
+      <div className="w-[90%] flex flex-col justify-center m-auto">
         <div className="flex justify-evenly w-[100%]">
-          <div className="w-[300px] flex flex-col justify-center">
-            <img src={client} alt="client" className=""/>
-            <div className="flex justify-between items-center mt-2">
-              <div className="font-bold text-3xl">
-                Liena Mang 
-              </div>
-              <div className="font-bold bg-base/50 rounded-full px-2 py-1 text-xs cursor-pointer">
-                Connect +
-              </div>
-            </div>
-            <div className="text-xl mt-2 text-center">
-              I just came here, to entertain you. Follow me to get entertainerd.
-            </div>
-          </div>
-          <div className="w-[300px] flex flex-col justify-center">
-            <img src={client} alt="client" className=""/>
-            <div className="flex justify-between items-center mt-2">
-              <div className="font-bold text-3xl">
-                Liena Mang 
-              </div>
-              <div className="font-bold bg-base/50 rounded-full px-2 py-1 text-xs cursor-pointer">
-                Connect +
-              </div>
-            </div>
-            <div className="text-xl mt-2 text-center">
-              I just came here, to entertain you. Follow me to get entertainerd.
-            </div>
-          </div>
-          <div className="w-[300px] flex flex-col justify-center">
-            <img src={client} alt="client" className=""/>
-            <div className="flex justify-between items-center mt-2">
-              <div className="font-bold text-3xl">
-                Liena Mang 
-              </div>
-              <div className="font-bold bg-base/50 rounded-full px-2 py-1 text-xs cursor-pointer">
-                Connect +
-              </div>
-            </div>
-            <div className="text-xl mt-2 text-center">
-              I just came here, to entertain you. Follow me to get entertainerd.
-            </div>
-          </div>
+          {allProfiles !== null &&
+            allProfiles?.slice(0,3)?.map((profile, index) => {
+              return(
+                <div key={index} className="w-[30%]">
+                  <ProfileCard profile={profile}/>
+                </div>
+              )
+              })
+          }
         </div>
         <div className="flex items-end text-base justify-end">
           <Link to="/find_matches" className="cursor-pointer font-medium">Find Out More {'>'} </Link>
