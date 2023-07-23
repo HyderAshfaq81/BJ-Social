@@ -3,6 +3,7 @@ import Signup from './pages/signup/signup.js';
 import ForgetPassword from './pages/Forget_Password/ForgetPassword.js'
 import Home from './Components/Home/HomePage'
 import FindMatches from './pages/FindMatches/FindMatches.js';
+import Payment from './Components/Payment/Payment.js';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -24,6 +25,7 @@ function App() {
         <Route path="/profile" element={<Profile/>} />
         <Route path="/find_matches" element={<FindMatches />} />
         <Route path="/testimonail" element={<Testimonail />} />
+        <Route path="/payment" element={<Payment />} />
       </Routes>
     </div>
   );
