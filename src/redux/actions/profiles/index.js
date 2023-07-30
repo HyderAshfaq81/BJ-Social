@@ -1,11 +1,11 @@
 import { actionTypes } from "../../constants/action-types";
 import { toast } from "react-toastify";
-const authToken = localStorage.getItem('authToken')
 export const getProfiles = () => {
+    const authToken = localStorage.getItem('authToken')
     console.log('auth token is', authToken)
     return async function (dispatch) {
         try {
-            const response = await fetch(`http://127.0.0.1:3000/profiles`, {
+            const response = await fetch(`https://meet-date-ac403bfa9c3a.herokuapp.com/profiles`, {
                 method: 'GET',
                 headers: {
                     'Content-type': 'application/json',
@@ -55,10 +55,11 @@ export const getProfiles = () => {
 // }
 
 export const likeUser = (data) => {
+    const authToken = localStorage.getItem('authToken')
     return async function (dispatch) {
       return new Promise(async (resolve) => {
           try {
-            const response = await fetch(`http://127.0.0.1:3000/likes`, {
+            const response = await fetch(`https://meet-date-ac403bfa9c3a.herokuapp.com/likes`, {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json',
@@ -83,9 +84,10 @@ export const likeUser = (data) => {
     }
 }
 export const allLikedUser = () => {
+    const authToken = localStorage.getItem('authToken')
     return async function (dispatch) {
         try {
-            const response = await fetch(`http://127.0.0.1:3000/likes/liked_users`, {
+            const response = await fetch(`https://meet-date-ac403bfa9c3a.herokuapp.com/likes/liked_users`, {
                 method: 'GET',
                 headers: {
                     'Content-type': 'application/json',

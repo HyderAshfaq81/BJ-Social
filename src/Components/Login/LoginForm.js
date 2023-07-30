@@ -1,45 +1,37 @@
 import React, { Fragment, useState, useEffect, useRef } from "react"; // eslint-disable-next-line
 import { useNavigate } from "react-router-dom";
 import signinImage from "../../assets/signin_image.jpeg";
+import google from "../../assets/google.svg";
 import { toast } from "react-toastify";
-
+import { useDispatch } from "react-redux";
+import { userLogin } from "../../redux/actions/Authentication";
 
 const LoginForm = () => {
   const navigate = useNavigate();
   const formRef = useRef();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    var myHeaders = new Headers();
-    myHeaders.append(
-      "Authorization",
-      "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImE1MWJiNGJkMWQwYzYxNDc2ZWIxYjcwYzNhNDdjMzE2ZDVmODkzMmIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vY2x0LTM2MDMxNCIsImF1ZCI6ImNsdC0zNjAzMTQiLCJhdXRoX3RpbWUiOjE2ODc5NjMwMzYsInVzZXJfaWQiOiJsRjZYd2RRQlNOUEJnNVBqdjZFOXE1YThrT1EyIiwic3ViIjoibEY2WHdkUUJTTlBCZzVQanY2RTlxNWE4a09RMiIsImlhdCI6MTY4ODQyNjk0NSwiZXhwIjoxNjg4NDMwNTQ1LCJlbWFpbCI6Imhpa2VxeUBzb2NhbS5tZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicGhvbmVfbnVtYmVyIjoiKzQ2NzI2NDEyNTU0IiwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJwaG9uZSI6WyIrNDY3MjY0MTI1NTQiXSwiZW1haWwiOlsiaGlrZXF5QHNvY2FtLm1lIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.SX7denTXQ6VEt4AjcI9kNAeKoKseHijaIQopgeAaZm-FF1H3iZGeVgDvuYV4CoIIAFgM8adC24ZxDwkEEBLl-vCy9mW4GIXeQV89bDSn_FiCfhmKvmgLsOYfv5CXliSjG_s674zae-Hao5gdxNteuKNPKMghkmpu-gtBgTZUIYomi4tZN39XjL990eQkMyKoA0NH9J_ZnD5MGlAjiVz5XBqe1o_Oe6EqY11G7xhgfpzsbcgTnPY6-ZRAujwKCNFYu6dtrqFixqSdgdwnTMlQygmZAhWpZl69pxL-9iWMZfK77pPWn7dD0NfumVWI1pAxKrI0gTMNktN3jJsPaq_W4w"
-    );
-
     var formdata = new FormData();
     formdata.append("user[email]", email);
     formdata.append("user[password]", password);
+  try {
+    const response = await dispatch(userLogin(formdata));
 
-    var requestOptions = {
-      method: "POST",
-      headers: myHeaders,
-      body: formdata,
-      redirect: "follow",
-    };
-    fetch(`http://127.0.0.1:3000/login`, requestOptions)
-      .then((response) => response.json())
-      .then((result) => {
-        if (result.status.code >= 200 && result.status.code < 400) {
-          // localStorage.setItem('token', 'eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJkN2M0YzU0My1iNGUzLTRlZjctYjQ3MC00MDY1ZTUxNDdkMjQiLCJzdWIiOiI1Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjkwMDcwMzg0LCJleHAiOjE2OTAwNzIxODR9.uKgK4rkQlSFNGEpMTUOIOOIrDbo7Tp53l0Xl-aXB2wU')
-          toast.success(result.status.message)
-          navigate('/home')
-        } else {
-          toast.error(result.status.message)
-        }
-      })
-      .catch((error) => toast.error('error while sign in '));
+    console.log('=====================', response.error);
+
+    if (response.error) {
+      formRef.current.reset();
+    } else {
+      formRef.current.reset();
+      navigate('/home');
+    }
+  } catch (error) {
+    console.error('Error occurred during login:', error);
+  }
   };
   return (
     <div className="min-h-screen grid grid-cols-12">
@@ -133,6 +125,12 @@ const LoginForm = () => {
               SIGN IN
             </button>
           </form>
+          <div className="flex items-center justify-center my-4 w-full">
+            <button className="flex w-full text-center items-center justify-center bg-white border border-gray-300 rounded-lg shadow-md px-6 py-3 text-sm font-medium text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                <img src={google} alt="google" className="w-6 h-6"/>
+                <span>Continue with Google</span>
+            </button>
+          </div>
           <div className="flex justify-between w-full text-[12px]">
             <div className="font-[8px] flex">
               <input type="checkbox" />

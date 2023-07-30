@@ -4,7 +4,7 @@ import heartIcon from '../../assets/heartIcon.svg'
 import { useDispatch } from 'react-redux'
 import { allLikedUser, likeUser } from '../../redux/actions/profiles'
 const ProfileCard = ({profile}) => {
-  const fullName = profile?.first_name.concat(" ", profile?.last_name)
+  const fullName = profile?.first_name?.concat(" ", profile?.last_name)
   const dispatch = useDispatch();
   const handleLike = async (profile) => {
     console.log('profile is', profile)

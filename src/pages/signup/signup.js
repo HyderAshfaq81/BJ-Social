@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import signupImg from "../../assets/signupImg.jpeg";
+import google from "../../assets/google.svg";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -30,7 +31,7 @@ const Signup = () => {
       formRef.current.reset();
     } else {
       formRef.current.reset();
-      navigate('/home')
+      navigate('/login')
     }
 
     // try {
@@ -166,6 +167,12 @@ const Signup = () => {
                 SUBMIT
               </button>
             </form>
+            <div className="flex items-center justify-center my-4 w-full">
+            <button className="flex w-full text-center items-center justify-center bg-white border border-gray-300 rounded-lg shadow-md px-6 py-3 text-sm font-medium text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                <img src={google} alt="google" className="w-6 h-6"/>
+                <span>Continue with Google</span>
+            </button>
+          </div>
           </div>
         </div>
       </div>
