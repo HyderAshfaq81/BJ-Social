@@ -4,10 +4,10 @@ import imageGirl from "../../../assets/contactUs.jpg";
 const ContactUs = () => {
   return (
     <div className="flex mt-40 bg-grey2">
-      <div className="w-1/2 flex items-center justify-center">
+      <div className="md:flex hidden w-1/2 flex items-center justify-center">
         <img src={imageGirl} alt="imageGirl" className="h-[90%]" />
       </div>
-      <div className="w-1/2 flex items-center pl-20">
+      <div className="w-full md:w-1/2 flex items-center pl-4 md:pl-20">
         <div className="w-full">
           <div className="text-4xl font-bold pt-40">Contact Us</div>
           <div className="ml-5 mt-10">

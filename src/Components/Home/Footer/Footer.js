@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <div className="pt-40">
-      <div className="w-[80%] m-auto grid grid-cols-4">
+      <div className="w-[80%] m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
         <div className="w-11/12">
           <div className="flex justify-center">
             <a href="/" className="ml-10 flex relative">

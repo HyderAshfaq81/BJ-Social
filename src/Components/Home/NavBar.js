@@ -19,7 +19,7 @@ const Home = () => {
             </div>
           </a>
         </div>
-        <nav>
+        {/* <nav>
           <ul className="flex">
             <li>
               <Link to="/home" className="text-2xl mr-10 font-bold hover:underline hover:text-[#FF7294] text-white">Home</Link>
@@ -37,7 +37,7 @@ const Home = () => {
               <Link to="/profile" className="text-2xl mr-10 font-bold hover:underline hover:text-[#FF7294] text-white">Profile</Link>
             </li>
           </ul>
-        </nav>
+        </nav> */}
         {token ?
         <div className="text-2xl mr-10 font-bold hover:underline cursor-pointer hover:text-[#FF7294] text-white"
           onClick={() => {
@@ -58,9 +58,9 @@ const Home = () => {
         </div>
         }
       </div>
-      <div className="flex flex-col justify-center items-center w-[60%] m-auto h-full text-white">
-        <div className="text-4xl font-bold leading-7 mb-4">Find Your Partner With Ease</div>
-        <div className="3xl font-[500] leading-7 text-center">
+      <div className="flex flex-col justify-center md:items-center w-full md:w-[80%] xl:w-[70%] 2xl:w-[60%] h-[80vh] md:h-screen md:m-auto h-full text-white">
+        <div className="text-lg md:text-xl md:text-4xl font-bold leading-7 mb-4">Find Your Partner With Ease</div>
+        <div className="text-[8px] md:text-sm font-[500] leading-7 md:text-center md:flex hidden">
           Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum sit
           aldkja Lorem ipsum Lorem ipsum Lorem ipsum Lorem abc
           as;dfkas;l ipsum Lorem ipsum Lorem ipsum Lorem ipsum yeellllooaisdf
@@ -71,6 +71,11 @@ const Home = () => {
           sa;dflk ipsum Lorem ipsum Lorem ipsum Lorem ipsum saldfkjasldfjk
           asd;flk Lorem ipsum Lorem ipsum Lorem ipsum Lorem asdfkjlasfj
           sa;flk ipsum Lorem ipsum Lorem ipsum Lorem ipsum saldfkj
+        </div>
+        <div className="text-xs md:text-sm font-[500] leading-2 md:text-center flex md:hidden">
+          Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum sit
+          aldkja Lorem ipsum Lorem ipsum Lorem ipsum Lorem abc
+          as;dfkas;l ipsum Lorem ipsum Lorem ipsum Lorem ipsum yeellllooaisdf
         </div>
         <div className="text-white bg-[#FF7294] w-[200px] h-[40px] flex items-center justify-center rounded-[20px] mt-10 cursor-pointer">Get Started</div>
       </div>
