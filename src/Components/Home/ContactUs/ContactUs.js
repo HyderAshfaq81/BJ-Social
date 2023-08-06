@@ -3,13 +3,13 @@ import imageGirl from "../../../assets/contactUs.jpg";
 
 const ContactUs = () => {
   return (
-    <div className="flex mt-40 bg-grey2">
+    <div className="flex mt-5 md:mt-40 bg-grey2">
       <div className="md:flex hidden w-1/2 flex items-center justify-center">
         <img src={imageGirl} alt="imageGirl" className="h-[90%]" />
       </div>
       <div className="w-full md:w-1/2 flex items-center pl-4 md:pl-20">
         <div className="w-full">
-          <div className="text-4xl font-bold pt-40">Contact Us</div>
+          <div className="text-4xl font-bold pt-5 md:pt-40">Contact Us</div>
           <div className="ml-5 mt-10">
             <div className="flex flex-col mb-5">
               <label className="text-xl font-medium mb-5">First Name</label>
@@ -71,7 +71,7 @@ const ContactUs = () => {
                 required
               />
             </div>
-            <div className="bg-[#FF7294] text-white w-[200px] h-[60px] rounded-full flex justify-center items-center font-bold text-xl cursor-pointer">Submit</div>
+            <div className="bg-[#FF7294] text-white w-[200px] h-[40px] md:h-[60px] rounded-full flex justify-center items-center font-bold text-xl cursor-pointer">Submit</div>
           </div>
         </div>
       </div>

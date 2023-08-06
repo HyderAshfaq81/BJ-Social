@@ -8,11 +8,11 @@ const HowItWorks = () => {
         <div className="flex justify-evenly w-full m-auto bg-white rounded-[8px] py-5 w-[80%]">
           <div className="flex flex-col justify-center items-center">
             <div className="text-xl md:text-2xl lg:text-4xl font-bold text-[#FF7294] flex justify-center">15k</div>
-            <div className="text-xs md:text-lg lg:text-2xl text-black font-bold">clients</div>
+            <div className="text-xs md:text-lg lg:text-2xl text-black font-bold">Clients</div>
           </div>
           <div className="flex flex-col justify-center items-center">
             <div className="text-xl md:text-2xl lg:text-4xl font-bold text-[#FF7294]">150k</div>
-            <div className="text-xs md:text-lg lg:text-2xl text-black font-bold">Years of Experience</div>
+            <div className="text-xs md:text-lg lg:text-2xl text-black font-bold">Experience</div>
           </div>
           <div className="flex flex-col justify-center items-center">
             <div className="text-xl md:text-2xl lg:text-4xl font-bold text-[#FF7294] justify-center">15</div>
@@ -23,7 +23,7 @@ const HowItWorks = () => {
             <div className="text-xs md:text-lg lg:text-2xl text-black font-bold">Hours of Effort</div>
           </div>
         </div>
-        <div className="bg-grey2 w-full pt-20 xl:pt-40 flex justify-center">
+        <div className="bg-grey2 w-full pt-5 md:pt-20 xl:pt-40 flex justify-center">
           <div className="flex flex-col justify-center items-center w-[60%]">
             <div className="text-4xl font-bold leading-7 mb-4">How It Works</div>
             <div className="text-[8px] md:text-sm font-[500] leading-3 lg:leading-7 text-center">

@@ -9,8 +9,8 @@ const About = () => {
       </div>
       <div className="w-full md:w-[60%] md:ml-20 flex flex-col justify-center items-center md:items-start">
         <div className="font-bold text-4xl flex justify-center md:justify-start">About Us</div>
-        <div className="text-2xl md:text-3xl leading-5 mt-5 md:mt-10 flex justify-center md:justify-start">The love method</div>
-        <div className="text-lg md:text-xl leading-5 md:leading-7 mt-5 md:mt-10 flex justify-center md:justify-start md:text-start text-center">
+        <div className="text-lg md:text-3xl leading-5 mt-5 md:mt-10 flex justify-center md:justify-start">The love method</div>
+        <div className="text-xs md:text-xl leading-5 md:leading-7 mt-5 md:mt-10 flex justify-center md:justify-start md:text-start text-center">
           Are you looking for the ways to grow your business? If so? you may want to consider hiring a development company t help ypu out. At NETMARK, we provide full-cycle software development services to help business grow.
         </div>
         <div className="mt-5 text-grey1 cursor-pointer w-[200px] h-[40px] flex justify-center items-center bg-[#FF7294] rounded-full">
