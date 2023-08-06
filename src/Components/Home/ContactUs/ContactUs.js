@@ -9,7 +9,7 @@ const ContactUs = () => {
       </div>
       <div className="w-full md:w-1/2 flex items-center pl-4 md:pl-20">
         <div className="w-full">
-          <div className="text-4xl font-bold pt-5 md:pt-40">Contact Us</div>
+          <div className="text-2xl md:text-4xl font-bold pt-5 md:pt-40">Contact Us</div>
           <div className="ml-5 mt-10">
             <div className="flex flex-col mb-5">
               <label className="text-xl font-medium mb-5">First Name</label>

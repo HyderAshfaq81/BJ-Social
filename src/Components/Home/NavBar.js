@@ -23,7 +23,7 @@ const Home = () => {
         </div>
         <nav class="w-full relative md:px-4 py-4 flex justify-between items-center">
           <div class="lg:hidden">
-            <div class="navbar-burger flex items-center text-blue-600 p-3 cursor-pointer" onClick={() => toggleMenu()}>
+            <div class="navbar-burger flex items-center text-base p-3 cursor-pointer" onClick={() => toggleMenu()}>
               <svg class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <title>Mobile menu</title>
                 <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
@@ -104,7 +104,7 @@ const Home = () => {
           </div>
         }
         {token ?
-          <div className="flex items-center text-2xl md:mr-10 font-bold hover:underline cursor-pointer hover:text-[#FF7294] text-white"
+          <div className="flex items-center text-lg md:text-2xl md:mr-10 font-bold hover:underline cursor-pointer hover:text-[#FF7294] text-white"
             onClick={() => {
               localStorage.removeItem('authToken')
               toast.success('Logged out successfully');
@@ -114,7 +114,7 @@ const Home = () => {
             Logout
           </div>
         :
-          <div className="flex items-center text-2xl md:mr-10 font-bold hover:underline cursor-pointer hover:text-[#FF7294] text-white"
+          <div className="flex items-center text-lg md:text-2xl md:mr-10 font-bold hover:underline cursor-pointer hover:text-[#FF7294] text-white"
             onClick={() => {
               navigate('/login')
             }}

@@ -25,7 +25,7 @@ const HowItWorks = () => {
         </div>
         <div className="bg-grey2 w-full pt-5 md:pt-20 xl:pt-40 flex justify-center">
           <div className="flex flex-col justify-center items-center w-[60%]">
-            <div className="text-4xl font-bold leading-7 mb-4">How It Works</div>
+            <div className="text-2xl md:text-4xl font-bold leading-7 mb-4">How It Works</div>
             <div className="text-[8px] md:text-sm font-[500] leading-3 lg:leading-7 text-center">
               Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum sit
               aldkja Lorem ipsum Lorem ipsum Lorem ipsum Lorem abc
