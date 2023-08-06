@@ -1,26 +1,18 @@
 import React from "react";
 import signupImg from "../../assets/signupImg.jpeg";
+import MBALogo from '../../assets/MBALogo.png';
 
 const ForgetPassword = () => {
   return (
     <div className="mt-10 w-full min-h-screen">
       <div className="flex justify-center my-4">
-        <a href="/" className="flex relative">
-          <a href="/">
-            <img
-              src="https://logowik.com/content/uploads/images/sexy-woman1909.logowik.com.webp"
-              className="w-[100px] h-[80px]"
-            />
-          </a>
-          <div className="font-bold text-2xl flex items-center absolute top-4 -left-7">
-            <div className="mr-7">MEET</div>
-            <div>DATE</div>
-          </div>
+        <a href="/home" className="flex hover:text-[#FF7294] text-white mb-5">
+          <img src={MBALogo} alt="logo" width={100} height={100} className=""/>
         </a>
       </div>
       <div className="bg-grey2 w-full min-h-screen pt-10">
-        <div className="lg:w-[1280px] m-auto p-10 flex border-[0.1px] border-grey1/30 rounded-[8px]">
-          <div className="w-[30%] relative">
+        <div className="lg:w-[900px] xl:w-[1280px] m-auto p-10 flex border-[0.1px] border-grey1/30 rounded-[8px]">
+          <div className="md:flex hidden w-[30%] relative">
             <img
               src={signupImg} alt="signupImg"
               className="h-[450px] "
@@ -37,7 +29,7 @@ const ForgetPassword = () => {
               <div className="ml-2 mt-2">Already a member? <a href="/login" className="text-[#1075d3] hover:underline"> Sign In   </a></div>
             </div>
           </div>
-          <div className="w-[70%] flex flex-col justify-center items-center">
+          <div className="w-full md:w-[70%] flex flex-col justify-center items-center">
             <div className="w-full flex flex-col justify-center items-center">
               <div className="text-[28px] font-bold">Password Reset</div>
               <div className="text-[16px] text-black/50 mb-4">Enter your account username or email address below.</div>
