@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { userSignup } from "../../redux/actions/Authentication";
+import MBALogo from '../../assets/MBALogo.png';
 
 const Signup = () => {
   const [first_name, setFname] = useState("")
@@ -66,23 +67,13 @@ const Signup = () => {
   return (
     <div className="mt-10 w-full min-h-screen">
       <div className="flex justify-center my-4">
-        <a href="/" className="flex relative">
-          <a href="/">
-            <img
-              src="https://logowik.com/content/uploads/images/sexy-woman1909.logowik.com.webp"
-              className="w-[100px] h-[80px]"
-              alt="signup iamge"
-            />
-          </a>
-          <div className="font-bold text-2xl flex items-center absolute top-4 -left-7">
-            <div className="mr-7">MEET</div>
-            <div>DATE</div>
-          </div>
+        <a href="/home" className="flex hover:text-[#FF7294] text-white mb-5">
+          <img src={MBALogo} alt="logo" width={100} height={100} className=""/>
         </a>
       </div>
       <div className="bg-grey2 w-full min-h-screen pt-10">
-        <div className="lg:w-[1280px] m-auto p-10 flex border-[0.1px] border-grey1/30 rounded-[8px]">
-          <div className="w-[30%] relative">
+        <div className="w-full xl:w-[1280px] m-auto p-10 flex border-[0.1px] border-grey1/30 rounded-[8px]">
+          <div className="lg:flex hidden w-[30%] relative">
             <img
               src={signupImg} alt="signupImg"
               className="h-[450px] "
@@ -99,11 +90,11 @@ const Signup = () => {
               <div className="ml-2 mt-2">Already a member? <a href="/login" className="text-[#1075d3] hover:underline"> Sign In   </a></div>
             </div>
           </div>
-          <div className="w-[70%]">
+          <div className="w-full lg:w-[70%] lg:ml-4">
             <div className="text-[28px] font-bold mb-4">Create a new profile</div>
             <form ref={formRef} onSubmit={handleSubmit}>
-              <div className="flex w-full">
-                <div className="mb-4 w-1/2">
+              <div className="grid grid-cols-1 xl:grid-cols-2 w-full">
+                <div className="mb-4 w-full">
                   <label className="ml-2 text-base text-black/70">First Name</label>
                   <input
                     className="mt-2 tracking-[0.01em] w-[98%] text-black/50 box-border border-2 border-[#93AAC5] rounded-[8px] text-sm md:text-xs2 lg:text-sm py-5 md:py-3 lg:py-4 px-7 bg-white/50"
@@ -114,7 +105,7 @@ const Signup = () => {
                     onChange={(e) => setFname(e.target.value)}
                   />
                 </div>
-                <div className="mb-4 w-1/2">
+                <div className="mb-4 w-full">
                   <label className="ml-2 text-base text-black/70">Last Name</label>
                   <input
                     className="mt-2 tracking-[0.01em] w-[98%] text-black/50 box-border border-2 border-[#93AAC5] rounded-[8px] text-sm md:text-xs2 lg:text-sm py-5 md:py-3 lg:py-4 px-7 bg-white/50"
@@ -125,9 +116,7 @@ const Signup = () => {
                     onChange={(e) => setLname(e.target.value)}
                   />
                 </div>
-              </div>
-              <div className="flex w-full">
-                <div className="mb-4 w-1/2">
+                <div className="mb-4 w-full">
                   <label className="ml-2 text-base text-black/70">Email Address</label>
                   <input
                     className="mt-2 tracking-[0.01em] w-[98%] text-black/50 box-border border-2 border-[#93AAC5] rounded-[8px] text-sm md:text-xs2 lg:text-sm py-5 md:py-3 lg:py-4 px-7 bg-white/50"
@@ -138,7 +127,7 @@ const Signup = () => {
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
-                <div className="mb-4 w-1/2">
+                <div className="mb-4 w-full">
                   <label className="ml-2 text-base text-black/70">Password</label>
                   <input
                     className="mt-2 tracking-[0.01em] w-[98%] text-black/50 box-border border-2 border-[#93AAC5] rounded-[8px] text-sm md:text-xs2 lg:text-sm py-5 md:py-3 lg:py-4 px-7 bg-white/50"
@@ -149,9 +138,7 @@ const Signup = () => {
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
-              </div>
-              <div className="flex w-full">
-                <div className="mb-4 w-1/2">
+                <div className="mb-4 w-full">
                   <label className="ml-2 text-base text-black/70">Home Address</label>
                   <input
                     className="mt-2 tracking-[0.01em] w-[98%] text-black/50 box-border border-2 border-[#93AAC5] rounded-[8px] text-sm md:text-xs2 lg:text-sm py-5 md:py-3 lg:py-4 px-7 bg-white/50"
