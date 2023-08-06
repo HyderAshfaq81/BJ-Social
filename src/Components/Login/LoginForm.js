@@ -44,11 +44,11 @@ const LoginForm = () => {
           className="h-full object-cover"
         />
       </div>
-      <div className="ml-[30%] pt-[30%] col-span-12 lg:col-span-6 h-full w-full">
+      <div className="mx-5 md:ml-[30%] pt-[30%] col-span-12 lg:col-span-6 h-full md:w-full w-[90%]">
         <a href="/home" className="md:flex hover:text-[#FF7294] text-white mb-5">
           <img src={MBALogo} alt="logo" width={100} height={100} className=""/>
         </a>
-        <div className="mt-[5%] w-[450px]">
+        <div className="mt-[5%] w-full md:w-[450px]">
           <div className="flex pb-3 w-full">
             <h1 className="font-[500px] text-4xl w-fit">Sign In</h1>
             <div className="border-black border-b-[1px] w-[20%]"></div>
