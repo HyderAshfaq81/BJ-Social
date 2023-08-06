@@ -5,6 +5,8 @@ import google from "../../assets/google.svg";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { userLogin } from "../../redux/actions/Authentication";
+import MBALogo from '../../assets/MBALogo.png';
+
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -35,28 +37,18 @@ const LoginForm = () => {
   };
   return (
     <div className="min-h-screen grid grid-cols-12">
-      <div className="col-span-4">
+      <div className="hidden lg:flex lg:col-span-4">
         <img
           src={signinImage}
           alt="signinImage"
           className="h-full object-cover"
         />
       </div>
-      <div className="col-span-6 h-full w-full">
-        <a href="/" className="mt-[20%] ml-[35%] flex relative">
-          <a href="/">
-            <img
-              src="https://logowik.com/content/uploads/images/sexy-woman1909.logowik.com.webp"
-              className="w-[100px] h-[80px]"
-              alt= "login"
-            />
-          </a>
-          <div className="font-bold text-2xl flex items-center absolute top-4 -left-7">
-            <div className="mr-7">MEET</div>
-            <div>DATE</div>
-          </div>
+      <div className="ml-[30%] pt-[30%] col-span-12 lg:col-span-6 h-full w-full">
+        <a href="/home" className="md:flex hover:text-[#FF7294] text-white mb-5">
+          <img src={MBALogo} alt="logo" width={100} height={100} className=""/>
         </a>
-        <div className="mt-[10%] ml-[30%] w-[450px]">
+        <div className="mt-[5%] w-[450px]">
           <div className="flex pb-3 w-full">
             <h1 className="font-[500px] text-4xl w-fit">Sign In</h1>
             <div className="border-black border-b-[1px] w-[20%]"></div>
