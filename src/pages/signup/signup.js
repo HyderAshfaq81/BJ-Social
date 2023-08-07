@@ -72,13 +72,13 @@ const Signup = () => {
         </a>
       </div>
       <div className="bg-grey2 w-full min-h-screen pt-10">
-        <div className="w-full xl:w-[1280px] m-auto p-10 flex border-[0.1px] border-grey1/30 rounded-[8px]">
+        <div className="w-[95%] xl:w-[1200px] m-auto p-4 md:p-10 flex border-[0.1px] border-grey1/30 rounded-[8px]">
           <div className="lg:flex hidden w-[30%] relative">
             <img
               src={signupImg} alt="signupImg"
               className="h-[450px] "
             />
-            <div className="absolute bottom-0 bg-white w-[75%] h-[80px] m-4 rounded-[8px]">
+            <div className="absolute bottom-0 bg-white w-[80%] xl:w-[75%] h-[80px] m-4 rounded-[8px]">
               <div className="font-bold flex ml-2 mt-2">
                 <div>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -90,14 +90,14 @@ const Signup = () => {
               <div className="ml-2 mt-2">Already a member? <a href="/login" className="text-[#1075d3] hover:underline"> Sign In   </a></div>
             </div>
           </div>
-          <div className="w-full lg:w-[70%] lg:ml-4">
+          <div className="w-full lg:w-[70%] lg:ml-4 flex flex-col justify-center">
             <div className="text-[28px] font-bold mb-4">Create a new profile</div>
             <form ref={formRef} onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 xl:grid-cols-2 w-full">
                 <div className="mb-4 w-full">
                   <label className="ml-2 text-base text-black/70">First Name</label>
                   <input
-                    className="mt-2 tracking-[0.01em] w-[98%] text-black/50 box-border border-2 border-[#93AAC5] rounded-[8px] text-sm md:text-xs2 lg:text-sm py-5 md:py-3 lg:py-4 px-7 bg-white/50"
+                    className="mt-2 tracking-[0.01em] w-full xl:w-[98%] text-black/50 box-border border-2 border-[#93AAC5] rounded-[8px] text-sm md:text-xs2 lg:text-sm py-5 md:py-3 lg:py-4 px-7 bg-white/50"
                     type="text"
                     name="first_name"
                     placeholder="Enter your First Name"
@@ -108,7 +108,7 @@ const Signup = () => {
                 <div className="mb-4 w-full">
                   <label className="ml-2 text-base text-black/70">Last Name</label>
                   <input
-                    className="mt-2 tracking-[0.01em] w-[98%] text-black/50 box-border border-2 border-[#93AAC5] rounded-[8px] text-sm md:text-xs2 lg:text-sm py-5 md:py-3 lg:py-4 px-7 bg-white/50"
+                    className="mt-2 tracking-[0.01em] w-full xl:w-[98%] text-black/50 box-border border-2 border-[#93AAC5] rounded-[8px] text-sm md:text-xs2 lg:text-sm py-5 md:py-3 lg:py-4 px-7 bg-white/50"
                     type="text"
                     name="last_name"
                     placeholder="Enter your Last Name"
@@ -119,7 +119,7 @@ const Signup = () => {
                 <div className="mb-4 w-full">
                   <label className="ml-2 text-base text-black/70">Email Address</label>
                   <input
-                    className="mt-2 tracking-[0.01em] w-[98%] text-black/50 box-border border-2 border-[#93AAC5] rounded-[8px] text-sm md:text-xs2 lg:text-sm py-5 md:py-3 lg:py-4 px-7 bg-white/50"
+                    className="mt-2 tracking-[0.01em] w-full xl:w-[98%] text-black/50 box-border border-2 border-[#93AAC5] rounded-[8px] text-sm md:text-xs2 lg:text-sm py-5 md:py-3 lg:py-4 px-7 bg-white/50"
                     type="email"
                     name="first_name"
                     placeholder="Enter your Email Address"
@@ -130,7 +130,7 @@ const Signup = () => {
                 <div className="mb-4 w-full">
                   <label className="ml-2 text-base text-black/70">Password</label>
                   <input
-                    className="mt-2 tracking-[0.01em] w-[98%] text-black/50 box-border border-2 border-[#93AAC5] rounded-[8px] text-sm md:text-xs2 lg:text-sm py-5 md:py-3 lg:py-4 px-7 bg-white/50"
+                    className="mt-2 tracking-[0.01em] w-full xl:w-[98%] text-black/50 box-border border-2 border-[#93AAC5] rounded-[8px] text-sm md:text-xs2 lg:text-sm py-5 md:py-3 lg:py-4 px-7 bg-white/50"
                     type="password"
                     name="last_name"
                     placeholder="Enter your Password"
@@ -138,28 +138,28 @@ const Signup = () => {
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
-                <div className="mb-4 w-full">
+                {/* <div className="mb-4 w-full">
                   <label className="ml-2 text-base text-black/70">Home Address</label>
                   <input
-                    className="mt-2 tracking-[0.01em] w-[98%] text-black/50 box-border border-2 border-[#93AAC5] rounded-[8px] text-sm md:text-xs2 lg:text-sm py-5 md:py-3 lg:py-4 px-7 bg-white/50"
+                    className="mt-2 tracking-[0.01em] w-full xl:w-[98%] text-black/50 box-border border-2 border-[#93AAC5] rounded-[8px] text-sm md:text-xs2 lg:text-sm py-5 md:py-3 lg:py-4 px-7 bg-white/50"
                     type="text"
                     name="first_name"
                     placeholder="Enter your Home Address"
                     required
                     onChange={(e) => setAddress(e.target.value)}
                   />
-                </div>
+                </div> */}
               </div>
-              <button className="cursor-pointer bg-[#FFC0CA] w-full h-[50px] flex justify-center items-center rounded-[8px] text-white text-[18px] font-bold border-[0.2px] border-black/50 mt-4">
-                SUBMIT
-              </button>
+              <div className="flex flex-col md:flex-row items-center justify-between my-4 w-full">
+                <button className="cursor-pointer bg-[#FFC0CA] w-full md:w-[49%] h-[50px] flex justify-center items-center rounded-[8px] text-white text-sm font-bold border-[0.2px] border-black/50 mb-2 md:mb-0">
+                  SUBMIT
+                </button>
+                <button className="flex w-full md:w-[49%] text-center items-center justify-center bg-white border-[1px] border-gray-300 rounded-lg shadow-md py-3 text-sm font-medium text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                  <img src={google} alt="google" className="w-6 h-6"/>
+                  <span>Continue with Google</span>
+                </button>
+              </div>
             </form>
-            <div className="flex items-center justify-center my-4 w-full">
-            <button className="flex w-full text-center items-center justify-center bg-white border border-gray-300 rounded-lg shadow-md px-6 py-3 text-sm font-medium text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
-                <img src={google} alt="google" className="w-6 h-6"/>
-                <span>Continue with Google</span>
-            </button>
-          </div>
           </div>
         </div>
       </div>

@@ -18,7 +18,7 @@ const Home = () => {
       <div className="flex justify-between">
         <div className="hidden lg:flex justify-center">
           <a href="/home" className="md:flex hover:text-[#FF7294] text-white mb-5">
-            <img src={MBALogo} alt="logo" width={100} height={100}/>
+            <img src={MBALogo} alt="logo" width={100} height={100} className="rounded-[50%]"/>
           </a>
         </div>
         <nav class="w-full relative md:px-4 py-4 flex justify-between items-center">
@@ -31,37 +31,37 @@ const Home = () => {
             </div>
           </div>
           <ul class="hidden lg:flex lg:mx-auto lg:flex lg:items-center justify-center lg:w-auto lg:space-x-6 w-full">
-            <li><a class="text-sm text-gray-400 hover:text-gray-500" href="/home">Home</a></li>
+            <li><a class="hover:text-lg text-xl text-white hover:text-base hover:font-bold font-bold" href="/home">Home</a></li>
             <li class="text-gray-300">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
               </svg>
             </li>
-            <li><a class="text-sm text-gray-400 hover:text-gray-500" href="/find_matches">Find Match</a></li>
+            <li><a class="hover:text-lg text-xl text-white hover:text-base hover:font-bold font-bold" href="/find_matches">Find Match</a></li>
             <li class="text-gray-300">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
               </svg>
             </li>
-            <li><a class="text-sm text-gray-400 hover:text-gray-500" href="/home">About</a></li>
+            <li><a class="hover:text-lg text-xl text-white hover:text-base hover:font-bold font-bold" href="/home">About</a></li>
             <li class="text-gray-300">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
               </svg>
             </li>
-            <li><a class="text-sm text-gray-400 hover:text-gray-500" href="/pricing">Pricing</a></li>
+            <li><a class="hover:text-lg text-xl text-white hover:text-base hover:font-bold font-bold" href="/pricing">Pricing</a></li>
             <li class="text-gray-300">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
               </svg>
             </li>
-            <li><a class="text-sm text-gray-400 hover:text-gray-500" href="/testimonail">Testimonial</a></li>
+            <li><a class="hover:text-lg text-xl text-white hover:text-base hover:font-bold font-bold" href="/testimonial">Testimonial</a></li>
             <li class="text-gray-300">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
               </svg>
             </li>
-            <li><a class="text-sm text-gray-400 hover:text-gray-500" href="/profile">Profile</a></li>
+            <li><a class="hover:text-lg text-xl text-white hover:text-base hover:font-bold font-bold" href="/profile">Profile</a></li>
           </ul>
         </nav>
         {isMenuOpen &&

@@ -17,8 +17,8 @@ const Footer = () => {
           </div>
         </div>
         <div>
-          <div className="text-lg md:text-3xl font-bold mb-5 md:mb-10 mt-3">Company Info</div>
-          <div className="text-sm md:text-xl text-gray-500 font-medium leading-5 md:leading-8 ml-3">
+          <div className="text-[16px] md:text-3xl font-medium md:font-bold mb-5 md:mb-10 mt-3">Company Info</div>
+          <div className="text-sm md:text-xl text-gray-500 md:font-medium leading-5 md:leading-8 ml-3">
             <div>Home</div>
             <div>Match</div>
             <div>About</div>
@@ -27,8 +27,8 @@ const Footer = () => {
           </div>
         </div>
         <div>
-          <div className="text-lg md:text-3xl font-bold mb-5 md:mb-10 mt-3">Resources</div>
-          <div className="text-sm md:text-xl text-gray-500 font-medium leading-5 md:leading-8 ml-3">
+          <div className="text-[16px] md:text-3xl  font-medium md:font-bold mb-5 md:mb-10 mt-3">Resources</div>
+          <div className="text-sm md:text-xl text-gray-500 md:font-medium leading-5 md:leading-8 ml-3">
             <div>IOS & Andriod </div>
             <div>Watch a Demo</div>
             <div>Customers</div>
@@ -36,8 +36,8 @@ const Footer = () => {
           </div>
         </div>
         <div>
-          <div className="text-lg md:text-3xl font-bold mb-5 md:mb-10 mt-3">Contact</div>
-          <div className="text-sm md:text-xl text-gray-500 font-medium leading-5 md:leading-8 ml-3">
+          <div className="text-[16px] md:text-3xl font-medium md:font-bold mb-5 md:mb-10 mt-3">Contact</div>
+          <div className="text-sm md:text-xl text-gray-500  md:font-medium leading-5 md:leading-8 ml-3">
             <div>Newyork city. abc 1122</div>
             <div>+11122222000</div>
           </div>

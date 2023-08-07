@@ -8,7 +8,7 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
   return (
-    <header className="pb-6 bg-white lg:pb-0">
+    <header className="pb-6 bg-white lg:pb-0 pt-7">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <nav className="flex items-center justify-between h-16 lg:h-20">
           <div className="flex-shrink-0 mx-2">

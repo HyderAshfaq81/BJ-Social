@@ -11,7 +11,7 @@ const ForgetPassword = () => {
         </a>
       </div>
       <div className="bg-grey2 w-full min-h-screen pt-10">
-        <div className="lg:w-[900px] xl:w-[1280px] m-auto p-10 flex border-[0.1px] border-grey1/30 rounded-[8px]">
+        <div className="w-[95%] xl:w-[1200px] m-auto p-10 flex border-[0.1px] border-grey1/30 rounded-[8px]">
           <div className="md:flex hidden w-[30%] relative">
             <img
               src={signupImg} alt="signupImg"
