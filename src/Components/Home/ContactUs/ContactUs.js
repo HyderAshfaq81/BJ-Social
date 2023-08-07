@@ -14,7 +14,7 @@ const ContactUs = () => {
             <div className="flex flex-col mb-5">
               <label className="text-xl font-medium mb-5">First Name</label>
               <input
-                className="tracking-[0.01em] w-[80%] text-black box-border rounded-[8px] text-sm md:text-xs2 lg:text-sm py-5 md:py-3 lg:py-4 px-7 bg-cloudBurst"
+                className="tracking-[0.01em] w-[95%] md:w-[80%] text-black box-border rounded-[8px] text-sm md:text-xs2 lg:text-sm py-5 md:py-3 lg:py-4 px-7 bg-cloudBurst"
                 type="email"
                 name="email"
                 // value={email}
@@ -26,7 +26,7 @@ const ContactUs = () => {
             <div className="flex flex-col mb-5">
               <label className="text-xl font-medium mb-5">Last Name</label>
               <input
-                className="tracking-[0.01em] w-[80%] text-black box-border rounded-[8px] text-sm md:text-xs2 lg:text-sm py-5 md:py-3 lg:py-4 px-7 bg-cloudBurst"
+                className="tracking-[0.01em] w-[95%] md:w-[80%] text-black box-border rounded-[8px] text-sm md:text-xs2 lg:text-sm py-5 md:py-3 lg:py-4 px-7 bg-cloudBurst"
                 type="lastName"
                 name="lastName"
                 // value={email}
@@ -38,7 +38,7 @@ const ContactUs = () => {
             <div className="flex flex-col mb-5">
               <label className="text-xl font-medium mb-5">Phone Number</label>
               <input
-                className="tracking-[0.01em] w-[80%] text-black box-border rounded-[8px] text-sm md:text-xs2 lg:text-sm py-5 md:py-3 lg:py-4 px-7 bg-cloudBurst"
+                className="tracking-[0.01em] w-[95%] md:w-[80%] text-black box-border rounded-[8px] text-sm md:text-xs2 lg:text-sm py-5 md:py-3 lg:py-4 px-7 bg-cloudBurst"
                 type="lastName"
                 name="lastName"
                 // value={email}
@@ -50,7 +50,7 @@ const ContactUs = () => {
             <div className="flex flex-col mb-5">
               <label className="text-xl font-medium mb-5">Email</label>
               <input
-                className="tracking-[0.01em] w-[80%] text-black box-border rounded-[8px] text-sm md:text-xs2 lg:text-sm py-5 md:py-3 lg:py-4 px-7 bg-cloudBurst"
+                className="tracking-[0.01em] w-[95%] md:w-[80%] text-black box-border rounded-[8px] text-sm md:text-xs2 lg:text-sm py-5 md:py-3 lg:py-4 px-7 bg-cloudBurst"
                 type="lastName"
                 name="lastName"
                 // value={email}
@@ -62,7 +62,7 @@ const ContactUs = () => {
             <div className="flex flex-col mb-5">
               <label className="text-xl font-medium mb-5">Location</label>
               <input
-                className="tracking-[0.01em] w-[80%] text-black box-border rounded-[8px] text-sm md:text-xs2 lg:text-sm py-5 md:py-3 lg:py-4 px-7 bg-cloudBurst"
+                className="tracking-[0.01em] w-[95%] md:w-[80%] text-black box-border rounded-[8px] text-sm md:text-xs2 lg:text-sm py-5 md:py-3 lg:py-4 px-7 bg-cloudBurst"
                 type="lastName"
                 name="lastName"
                 // value={email}
@@ -71,8 +71,8 @@ const ContactUs = () => {
                 required
               />
             </div>
-            <div className="bg-[#FF7294] text-white w-[200px] h-[40px] md:h-[60px] rounded-full flex justify-center items-center font-bold text-xl cursor-pointer">Submit</div>
           </div>
+          <div className="md:m-0 m-auto mb-4 md:mb-0 bg-[#FF7294] text-white w-[200px] h-[40px] md:h-[60px] rounded-full flex justify-center items-center font-bold text-xl cursor-pointer">Submit</div>
         </div>
       </div>
     </div>

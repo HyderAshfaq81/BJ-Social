@@ -23,7 +23,7 @@ const Home = () => {
         </div>
         <nav class="w-full relative md:px-4 py-4 flex justify-between items-center">
           <div class="lg:hidden">
-            <div class="navbar-burger flex items-center text-base p-3 cursor-pointer" onClick={() => toggleMenu()}>
+            <div class="navbar-burger flex items-center text-base cursor-pointer" onClick={() => toggleMenu()}>
               <svg class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <title>Mobile menu</title>
                 <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
@@ -142,7 +142,9 @@ const Home = () => {
           aldkja Lorem ipsum Lorem ipsum Lorem ipsum Lorem abc
           as;dfkas;l ipsum Lorem ipsum Lorem ipsum Lorem ipsum yeellllooaisdf
         </div> */}
-        <div className="text-white bg-[#FF7294] w-[200px] h-[40px] flex items-center justify-center rounded-[20px] mt-10 cursor-pointer">Get Started</div>
+        <div className="w-full flex justify-center">
+          <div className="text-white bg-[#FF7294] w-[120px] md:w-[200px] h-[30px] md:h-[40px] flex items-center justify-center rounded-[20px] mt-10 cursor-pointer text-xs md:text-lg">Get Started</div>
+        </div>
       </div>
     </div>
   )
