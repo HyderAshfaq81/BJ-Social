@@ -20,11 +20,11 @@ const HomePage  = () => {
     <>
       <NavBar />
       <HowItWorks />
+      <FindMatch />
       <About />
       <Reviews />
       <ContactUs />
       <Footer />
-      {/* {allProfiles?.length < 0 && <FindMatch /> }*/}
     </>
   )
 }

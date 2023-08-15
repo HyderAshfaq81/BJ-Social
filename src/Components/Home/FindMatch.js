@@ -11,7 +11,7 @@ const FindMatch = () => {
   useEffect(() => {
     const token = localStorage.getItem('authToken')
     if (!token) {
-      toast.error('you need to signup of login to continue')
+      toast.error('You need to signup or login to continue')
     }
   },[])
   return (
@@ -29,6 +29,9 @@ const FindMatch = () => {
       </div>
       <div className="w-[90%] flex flex-col justify-center m-auto">
         <div className="flex justify-evenly w-[100%]">
+          {allProfiles.length === 0 && 
+            <div className="font-bold text-xl mb-5 text-3xl"> Please login or signup to connect with friends </div>
+          }
           {allProfiles !== null &&
             allProfiles?.slice(0,3)?.map((profile, index) => {
               return(

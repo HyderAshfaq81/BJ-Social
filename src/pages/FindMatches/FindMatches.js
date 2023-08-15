@@ -36,6 +36,9 @@ const FindMatches = () => {
                 </div>
               </div>
             </div>
+            {!totalItems &&
+              <div className="font-bold text-xl mb-5 text-3xl"> Please login or signup to connect with friends </div>
+            }
             <div className="w-full grid grid-cols-3 justify-center m-auto gap-6">
               {allProfiles?.map((profile, index) => {
                 return(
