@@ -3,7 +3,7 @@ import MBALogo from '../../assets/MBALogo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const [token, setToken] = useState(localStorage.getItem("authToken"))
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -108,16 +108,32 @@ const Header = () => {
               Pricing{" "}
             </a>
           </div>
-
-          <a
-            href="#"
-            title=""
-            className="items-center justify-center hidden px-4 py-3 ml-10 text-base font-semibold text-white transition-all duration-200 bg-base border border-transparent rounded-md lg:inline-flex hover:base focus:base"
-            role="button"
-          >
-            {" "}
-            Logout{" "}
-          </a>
+          {!token &&
+            <a
+              href="/login"
+              title=""
+              className="items-center justify-center hidden px-4 py-3 ml-10 text-base font-semibold text-white transition-all duration-200 bg-base border border-transparent rounded-md lg:inline-flex hover:base focus:base"
+              role="button"
+            >
+              {" "}
+              Login{" "}
+            </a>
+          }
+          {token &&
+            <a
+              href="/login"
+              title=""
+              onClick={() => {
+                localStorage.removeItem('authToken')
+                // toast.success('Logged out successfully');
+              }}
+              className="items-center justify-center hidden px-4 py-3 ml-10 text-base font-semibold text-white transition-all duration-200 bg-base border border-transparent rounded-md lg:inline-flex hover:base focus:base"
+              role="button"
+            >
+              {" "}
+              Logout{" "}
+            </a>
+          }
         </nav>
         {isMenuOpen &&
           <nav className="pt-4 pb-6 bg-white border border-gray-200 rounded-md shadow-md lg:hidden">
